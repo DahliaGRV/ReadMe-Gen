@@ -1,10 +1,8 @@
 // TODO: Include packages needed for this application
 const inquirer= require('inquirer');
 const fs= require('fs');
+const generateMarkdown= require('./generateMarkdown')
 
-
-
-// TODO: Create an array of questions for user input
 inquirer.prompt([{
     type: "input",
     name:"title",
@@ -14,18 +12,25 @@ inquirer.prompt([{
     name:"description",
     message:"Please include a description of your project:"
 },{
-    type:"checkbox",
-    name:"languages",
-    message:"What languages were used? Select all that apply:",
-    choices:["HTML","JavaScript","C++","Python"]
-},{
     type:"input",
     name:"usage",
     message:"Please explain how this project will be/is used:"
 },{
     type:"input",
+    name:"installation",
+    message:"Please describe steps that need to be taken for this program to work:"
+},{
+    type:"input",
     name:"credit",
     message:"Include any sources you would like to credit:"
+},{ 
+    type:"input",
+    name:"email",
+    message:"Email Address:"
+},{ 
+    type:"input",
+    name:"profile",
+    message:"GitHub profile URL:"
 },{ 
     type:"input",
     name:"repoLink",
@@ -37,20 +42,22 @@ inquirer.prompt([{
 },{
     type:"list",
     name:"license",
-    message:"Licesne you would like to include:"
+    message:"Licesnse you would like to include:",
+    choices:["GPLv2","GPLv3","LGPLv3","None"]
 
+},{
+    type:"input",
+    name:"summary",
+    message:"What were some ways this project challenged you? What did you learn?"
+},{
+    type:"input",
+    name:"tests",
+    message:"What tests were run on this project?"
 }
 ])
-    .then((answers)=> {
-        console.log(answers);
-        fs.writeFile(`./README.md`,)
+    .then((data)=> {
+        console.log(data);
+        fs.writeFile(`./${data.title}.README.md`, generateMarkdown(data),function(err){
+            if(err){throw err}
+        })
     })
-
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-// function init() {}
-
-// Function call to initialize app
-// init();
