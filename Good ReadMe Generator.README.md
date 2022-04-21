@@ -29,8 +29,7 @@ I tested out the Readme generator mulitple times, making sure the layout looked 
 This README is covered under license GPLv2
 
 ## Questions
-* For any questions please contact me at this email address:
-[Email Address](dahlialolagraves@gmail.com)
+* For any questions please contact me at this email address: dahlialolagraves@gmail.com
 
 * [GitHub Portfolio](github.com/DahliaGRV)
 

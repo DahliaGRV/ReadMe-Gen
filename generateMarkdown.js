@@ -44,8 +44,7 @@ ${data.tests}
 This README is covered under license ${data.license}
 
 ## Questions
-* For any questions please contact me at this email address:
-[Email Address](${data.email})
+* For any questions please contact me at this email address:${data.email}
 
 * [GitHub Portfolio](${data.profile})
 
